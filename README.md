@@ -28,6 +28,7 @@ When getting started, set train_type variable as 'restart' in dataloading part (
 
 ## Evaluation:
 Beam search is built for decoding, and the main measurements are BLEU score and distinct value of unigrams and bigrams. In notebook, there are some records with different hyper-parameters I tried. One can also play with other combination.  
+Evaluation on baseline seq2seq model achieves BLEU 3.73 on test set, with 0.103 and 0.412 for distinct-1 and distinct-2.  
 For MMI-antiLM, evaluation on test set achieves BLEU 4.21, with 0.126 and 0.457 for distinct-1 and distinct-2.  
 For MMI-bidi, evaluation on test set achieves BLEU 4.20, with 0.111 and 0.408 for distinct-1 and distinct-2.  
 
