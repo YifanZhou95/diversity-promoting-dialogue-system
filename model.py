@@ -1,3 +1,6 @@
+# Seq2Seq model consisting of encoder and decoder
+# support batch processing
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

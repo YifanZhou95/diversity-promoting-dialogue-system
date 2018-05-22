@@ -1,9 +1,12 @@
-
-
-### reference: https://github.com/spro/practical-pytorch/blob/master/seq2seq-translation/seq2seq-translation.ipynb ###
+# read txt file and process the data by lowercasing and filtering too short or long sentences
 
 import unicodedata
 import re
+
+PAD_token = 0
+SOS_token = 1
+EOS_token = 2
+UNK_token = 3
 
 # Turn a Unicode string to plain ASCII, thanks to http://stackoverflow.com/a/518232/2809427
 def unicode_to_ascii(s):
@@ -13,20 +16,14 @@ def unicode_to_ascii(s):
     )
 
 # Lowercase, trim, and remove non-letter characters
+# reference: https://github.com/spro/practical-pytorch/blob/master/seq2seq-translation/seq2seq-translation.ipynb
 def normalize_string(s):
     s = unicode_to_ascii(s.lower().strip())
     s = re.sub(r"([.!?])", r" \1", s)
     s = re.sub(r"[^a-zA-Z.!?]+", r" ", s)
     return s
 
-
 # a class for computing statistics of corpus
-
-PAD_token = 0
-SOS_token = 1
-EOS_token = 2
-UNK_token = 3
-
 class CorpusStat:
     def __init__(self, name):
         self.name = name
