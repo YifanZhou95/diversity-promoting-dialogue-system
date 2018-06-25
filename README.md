@@ -41,3 +41,6 @@ MMI-antiLM -- gamma=0.2, lambda=0.2, threshold=2
 MMI-bidi -- gamma=-0.2, lambda=0.5
 ![sample](https://github.com/YifanZhou95/diversity-promoting-dialogue-system/blob/master/sample/sample_show_bidi.PNG)
 
+## TODO:
+1. Find better teacher forcing ratio (current version use 100% ratio, i.e. completely follows reference policy)
+2. Tune dropout value (current version's dropout=0)
